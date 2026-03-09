@@ -1,0 +1,22 @@
+// ─── Feature definitions ──────────────────────────────────────────────────────
+export const ALL_FEATURES = [
+    { key: "badge", label: "Max Badge on Profile Card", level: 1, dev: false },
+    { key: "room_background", label: "Custom Room Background", level: 1, dev: false },
+    { key: "room_lock", label: "Room Lock", level: 1, dev: false },
+    { key: "stealth_visit", label: "Stealth Profile Visits", level: 1, dev: false },
+    { key: "chat_background", label: "Custom Chat Background (DMs)", level: 1, dev: false },
+    { key: "hide_reg_days", label: "Hide Registration Days", level: 1, dev: false },
+    { key: "send_photos_room", label: "Send Photos in Rooms", level: 1, dev: false },
+    { key: "hide_charge_game_level", label: "Hide Charge & Game Level", level: 2, dev: false },
+    { key: "wealth_speed_3", label: "Wealth Level Speed +3%", level: 2, dev: false },
+    { key: "friend_cancel_alert", label: "Unfriend Notification Alert", level: 2, dev: false },
+    { key: "hide_top_supporters", label: "Hide Top Supporters", level: 2, dev: false },
+    { key: "animated_avatar", label: "Animated Profile Picture", level: 2, dev: false },
+    { key: "close_friends_toggle", label: "Close Friends List Toggle", level: 3, dev: false },
+    { key: "vip_discount_30", label: "30% Off VIP Renewal", level: 3, dev: false },
+    { key: "wealth_speed_5", label: "Wealth Level Speed +5%", level: 3, dev: false },
+    { key: "exclusive_gifts", label: "Exclusive Gift Box Items", level: 3, dev: false },
+    { key: "room_color", label: "Highlighted Room in Public Lists", level: 3, dev: false },
+    { key: "agent_badge_toggle", label: "Toggle Agent & Host Badges", level: 3, dev: false },
+    { key: "hide_room", label: "Hide Room from Lists", level: 3, dev: true },
+];
