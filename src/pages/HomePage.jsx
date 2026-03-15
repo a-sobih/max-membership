@@ -110,8 +110,6 @@ export default function MaxMembership() {
   }
 
 
-
-
   function confirmUpgrade() {
     const { total } = calcUpgradeDays(remainingDays);
     const newExp = new Date();

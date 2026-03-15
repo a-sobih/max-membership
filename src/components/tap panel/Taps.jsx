@@ -7,6 +7,7 @@ import FeatureRow from "../FeatureRow";
 import MembershipActions from "../ActionButtons";
 import { useState } from "react";
 import UpgradePreview from "../UpgradeModal";
+import Spinner from "../ui/Spinner";
 
 const Taps = ({ activeTab, setActiveTab }) => {
     const queryClient = useQueryClient();
@@ -34,7 +35,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
         queryFn: getMembershipLevels,
     });
 
-    const { data: membership } = useQuery({
+    const { data: membership = {} } = useQuery({
         queryKey: ["currentMembership"],
         queryFn: getCurrentMembership,
         staleTime: 1000 * 60, // دقيقة واحدة cache
@@ -59,14 +60,14 @@ const Taps = ({ activeTab, setActiveTab }) => {
     }
 
     const allFeatures = Object.entries(levelsFeatures).flatMap(([level, features]) =>
-        features.map((f) => ({
+        features?.map((f) => ({
             key: f,
             label: f.replaceAll("_", " "),
             level: Number(level)
         }))
     );
 
-    if (loadingLevels || loadingFeatures) return <div>Loading...</div>;
+    if (loadingLevels || loadingFeatures) return <Spinner />;
 
     const getFeaturesUpToLevel = (lvlNumber) => {
         let features = [];
@@ -81,9 +82,9 @@ const Taps = ({ activeTab, setActiveTab }) => {
     return (
         <>
             <div style={{ display: "flex", gap: "6px", padding: "20px 0 0", overflowX: "auto" }}>
-                {levels.map(lvl => {
+                {levels?.map(lvl => {
                     const col = LEVEL_COLORS[lvl.level];
-                    const isCurrent = membership.active && membership.level === lvl.level;
+                    const isCurrent = membership?.active && membership.level === lvl.level;
                     const isActive = activeTab === lvl.level;
                     return (
                         <button key={lvl.level} className="tab-btn" onClick={() => setActiveTab(lvl.level)}
@@ -114,7 +115,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
             </div>
 
             {/* Tab Panel */}
-            {levels.map(lvl => {
+            {levels?.map(lvl => {
                 if (activeTab !== lvl.level) return null;
                 const col = LEVEL_COLORS[lvl.level];
                 const featuresForLevel = getFeaturesUpToLevel(lvl.level);
@@ -174,7 +175,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
                             <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "10px" }}>
                                 Features
                             </div>
-                            {allFeatures.map((feature) => {
+                            {allFeatures?.map((feature) => {
                                 const isActive = activeFeatures.some(f => f.key === feature.key);
 
                                 return (

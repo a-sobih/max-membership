@@ -17,9 +17,13 @@ export const getMembershipFeatures = async () => {
     return res.data.data; // هيكون شكلها: { "1": [...], "2": [...], "3": [...] }
 };
 
-export const activateMembership = async (level) => {
-    const res = await api.post("/max-membership/activate", { level });
-    return res.data.data;
+export const activateMembership = async ({ level, months }) => {
+    const res = await api.post("/max-membership/activate", {
+        level,
+        months
+    });
+
+    return res.data;
 };
 
 export const confirmMembershipPayment = async (product_reference) => {

@@ -11,10 +11,8 @@ const Header = () => {
         staleTime: 1000 * 60, // دقيقة واحدة cache
     });
 
-    if (isLoading) return <div>Loading...</div>;
-    if (isError || !membership) return <div>Failed to load membership</div>;
 
-    const remainingDays = membership.active ? daysRemaining(membership.expires_at) : 0;
+    const remainingDays = membership?.active ? daysRemaining(membership.expires_at) : 0;
 
     return (
         <div style={{
@@ -43,7 +41,7 @@ const Header = () => {
                 </div>
 
                 {/* Current Status Banner */}
-                {membership.active ? (
+                {membership?.active ? (
                     <div style={{
                         background: "rgba(226,201,126,0.07)",
                         border: "1px solid rgba(226,201,126,0.25)",
