@@ -2,6 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import router from "./routes/router.jsx";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   const { i18n } = useTranslation();
@@ -25,5 +26,10 @@ export default function App() {
   }, []);
 
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Toaster position="top-right" />
+      <RouterProvider router={router} />
+    </>
+  )
 }

@@ -44,7 +44,7 @@ function UpgradePreview({ fromLevel, toLevel, onClose, onConfirm, isLoading }) {
                     <div style={{ display: "flex", justifyContent: "space-between" }}>Half Days Added: <span>{half_days_added}</span></div>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>New Subscription: <span>{months * 30} days</span></div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700 }}>Total Days: <span>{remaining_days + half_days_added + months * 30}</span></div>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>Cost: <span>${price.amount_per_month}</span></div>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>Cost: <span>{price.amount_per_month}</span></div>
                 </div>
 
                 <div style={{ display: "flex", gap: "10px" }}>

@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 const MembershipActions = ({ lvl, membership, setShowUpgrade }) => {
     const queryClient = useQueryClient();
-
     const activateMutation = useMutation({
         mutationFn: () => activateMembership({
             level: lvl.level,
@@ -14,7 +13,7 @@ const MembershipActions = ({ lvl, membership, setShowUpgrade }) => {
         onSuccess: (res) => {
             if (res.data.payment_required) {
                 alert(`Payment required: $${res.data.amount_usd}`);
-                // بدل window.location.href
+
             } else {
                 queryClient.invalidateQueries({ queryKey: ["currentMembership"] });
                 setUpgradeLevel(null);
@@ -23,7 +22,10 @@ const MembershipActions = ({ lvl, membership, setShowUpgrade }) => {
             }
         },
         onError: (error) => {
-            toast.error(error?.response?.data?.message || "Something went wrong");
+            const message =
+                error?.response?.data?.message || error?.message || "Something went wrong";
+
+            toast.error(message);
         }
     });
 
