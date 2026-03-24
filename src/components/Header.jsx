@@ -3,14 +3,16 @@ import { LEVEL_COLORS } from "@/constants/colors";
 import { getCurrentMembership } from "@/services/membership";
 import { daysRemaining } from "@/utils/helpers";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+    const { t } = useTranslation();
+
     const { data: membership, isLoading, isError } = useQuery({
         queryKey: ["currentMembership"],
         queryFn: getCurrentMembership,
         staleTime: 1000 * 60, // دقيقة واحدة cache
     });
-
 
     const remainingDays = membership?.active ? daysRemaining(membership.expires_at) : 0;
 
@@ -32,10 +34,10 @@ const Header = () => {
                             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                             animation: "shimmer 4s linear infinite",
                         }}>
-                            Max Membership
+                            {t("header.title")}
                         </h1>
                         <p style={{ margin: 0, fontSize: "12px", color: "#666", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                            Exclusive privileges for power users
+                            {t("header.subtitle")}
                         </p>
                     </div>
                 </div>
@@ -46,28 +48,53 @@ const Header = () => {
                         background: "rgba(226,201,126,0.07)",
                         border: "1px solid rgba(226,201,126,0.25)",
                         borderRadius: "14px", padding: "14px 18px",
-                        display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center",
+
                         animation: "pulse-glow 3s ease-in-out infinite",
                     }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                            <span style={{ fontSize: "18px" }}>{LEVEL_COLORS[membership.level]?.badge}</span>
-                            <div>
-                                <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>Active Plan</div>
-                                <div style={{ color: "#e2c97e", fontWeight: 700, fontSize: "15px" }}>Max Level {membership.level}</div>
+                        <div className="flex items-center justify-between gap-8">
+                            {/* الشمال */}
+                            <div className="flex items-center gap-8">
+                                <div className="flex items-center gap-3">
+                                    <span style={{ fontSize: "18px" }}>{LEVEL_COLORS[membership.level]?.badge}</span>
+                                    <div>
+                                        <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                                            {t("header.activePlan")}
+                                        </div>
+                                        <div style={{ color: "#e2c97e", fontWeight: 700, fontSize: "15px" }}>
+                                            {t("header.maxLevel")} {membership.level}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style={{ width: "1px", height: "36px", background: "#333" }} />
+
+                                <div>
+                                    <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                                        {t("header.daysRemaining")}
+                                    </div>
+                                    <div style={{ color: "#5ddb8a", fontWeight: 700, fontSize: "15px" }}>
+                                        {remainingDays} {t("header.days")}
+                                    </div>
+                                </div>
+
+                                <div style={{ width: "1px", height: "36px", background: "#333" }} />
+
+                                <div>
+                                    <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                                        {t("header.activeFeatures")}
+                                    </div>
+                                    <div style={{ color: "#e8dfc8", fontWeight: 700, fontSize: "15px" }}>
+                                        {membership.features.length} {t("header.features")}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div style={{ width: "1px", height: "36px", background: "#333" }} />
-                        <div>
-                            <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>Days Remaining</div>
-                            <div style={{ color: "#5ddb8a", fontWeight: 700, fontSize: "15px" }}>{remainingDays} days</div>
-                        </div>
-                        <div style={{ width: "1px", height: "36px", background: "#333" }} />
-                        <div>
-                            <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.06em" }}>Active Features</div>
-                            <div style={{ color: "#e8dfc8", fontWeight: 700, fontSize: "15px" }}>{membership.features.length} features</div>
-                        </div>
-                        <div style={{ flex: 1, textAlign: "right" }}>
-                            <span style={{ fontSize: "11px", color: "#666" }}>Expires {membership.expires_at}</span>
+
+                            {/* اليمين */}
+                            <div className="">
+                                <span style={{ fontSize: "11px", color: "#666" }}>
+                                    {t("header.expires")} {membership.expires_at}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 ) : (
@@ -77,11 +104,11 @@ const Header = () => {
                         display: "flex", alignItems: "center", gap: "10px",
                     }}>
                         <span style={{ color: "#555", fontSize: "22px" }}>○</span>
-                        <span style={{ color: "#555", fontSize: "14px" }}>No active Max Membership. Choose a level below to get started.</span>
+                        <span style={{ color: "#555", fontSize: "14px" }}>{t("header.noMembership")}</span>
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     )
 }
 

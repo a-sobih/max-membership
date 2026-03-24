@@ -143,17 +143,6 @@ export default function MaxMembership() {
 
       </div>
 
-      {/* Upgrade Modal */}
-      {/* {showUpgrade && (
-        <UpgradePreview
-          fromLevel={membership.level}
-          toLevel={showUpgrade}
-          remainingDays={remainingDays}
-          onClose={() => setShowUpgrade(null)}
-          onConfirm={confirmUpgrade}
-        />
-      )} */}
-
       {/* Toast */}
       {toast && (
         <div style={{

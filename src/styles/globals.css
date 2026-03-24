@@ -1,4 +1,8 @@
+/* Fonts for English */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Font Arabic */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -6,17 +10,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* * {
-  background-color: black;
-  color: white;
+html[dir="rtl"] {
+  font-family: 'Cairo', sans-serif !important;
 }
 
-button {
-  padding: 0.5rem;
-  border-radius: 3px;
-  border: 1px solid blue;
-  margin-right: 1rem;
-} */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  font-family: 'Cairo', sans-serif !important;
+}
 
 @theme inline {
 
@@ -236,6 +237,12 @@ button {
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  html[dir="rtl"],
+  html[dir="rtl"] body,
+  html[dir="rtl"] * {
+    font-family: 'Cairo', sans-serif !important;
   }
 }
 

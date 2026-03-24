@@ -8,8 +8,11 @@ import MembershipActions from "../ActionButtons";
 import { useState } from "react";
 import UpgradePreview from "../UpgradeModal";
 import Spinner from "../ui/Spinner";
+import { useTranslation } from "react-i18next";
 
 const Taps = ({ activeTab, setActiveTab }) => {
+    const { t } = useTranslation();
+
     const queryClient = useQueryClient();
     const [showUpgrade, setShowUpgrade] = useState(false);
     const [upgradeLevel, setUpgradeLevel] = useState(null);
@@ -60,9 +63,9 @@ const Taps = ({ activeTab, setActiveTab }) => {
     }
 
     const allFeatures = Object.entries(levelsFeatures).flatMap(([level, features]) =>
-        features?.map((f) => ({
-            key: f,
-            label: f.replaceAll("_", " "),
+        features?.map((key) => ({
+            key,
+            label: t(`features.${key}`),
             level: Number(level)
         }))
     );
@@ -76,8 +79,6 @@ const Taps = ({ activeTab, setActiveTab }) => {
         }
         return features;
     };
-
-
 
     return (
         <>
@@ -105,10 +106,10 @@ const Taps = ({ activeTab, setActiveTab }) => {
                                     fontSize: "9px", padding: "2px 6px", borderRadius: "20px",
                                     background: col.primary, color: "#0d0d11", fontWeight: 700,
                                     letterSpacing: "0.04em",
-                                }}>ACTIVE</span>
+                                }}>{t("taps.active")}</span>
                             )}
                             <span style={{ fontSize: "16px", display: "block", marginBottom: "3px" }}>{col.badge}</span>
-                            Level {lvl.level}
+                            {t("taps.level")} {lvl.level}
                         </button>
                     );
                 })}
@@ -143,7 +144,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
                                     {col.badge} {lvl.name_en}
                                 </h2>
                                 <p style={{ margin: "4px 0 0", color: "#666", fontSize: "13px" }}>
-                                    {featuresForLevel.length} features included
+                                    {featuresForLevel.length} {t("LevelHeader.featuresIncluded")}
                                 </p>
                             </div>
                             <div style={{ textAlign: "right" }}>
@@ -153,17 +154,18 @@ const Taps = ({ activeTab, setActiveTab }) => {
                                     borderRadius: "12px", padding: "12px 18px",
                                 }}>
                                     <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", marginBottom: "4px" }}>
-                                        Female (Coins)
+                                        {t("LevelHeader.Female")} ({t("LevelHeader.Coins")})
+
                                     </div>
                                     <div style={{ color: col.primary, fontWeight: 700, fontSize: "18px" }}>
-                                        {lvl.price_coins.toLocaleString()} <span style={{ fontSize: "13px", opacity: .7 }}>coins</span>
+                                        {lvl.price_coins.toLocaleString()} <span style={{ fontSize: "13px", opacity: .7 }}>{t("LevelHeader.Coins")}</span>
                                     </div>
                                     <div style={{ borderTop: `1px solid ${col.primary}22`, paddingTop: "8px", marginTop: "8px" }}>
                                         <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", marginBottom: "3px" }}>
-                                            Male (USD)
+                                            {t("LevelHeader.Male")} ({t("LevelHeader.USD")})
                                         </div>
                                         <div style={{ color: "#e8dfc8", fontWeight: 700, fontSize: "16px" }}>
-                                            ${lvl.price_usd} <span style={{ fontSize: "12px", opacity: .6 }}>/ month</span>
+                                            ${lvl.price_usd} <span style={{ fontSize: "12px", opacity: .6 }}>/ {t("LevelHeader.month")}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +175,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
                         {/* Features list */}
                         <div style={{ marginBottom: "22px" }}>
                             <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "10px" }}>
-                                Features
+                                {t("LevelHeader.features")}
                             </div>
                             {allFeatures?.map((feature) => {
                                 const isActive = activeFeatures.some(f => f.key === feature.key);

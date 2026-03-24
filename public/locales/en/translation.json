@@ -1,3 +1,67 @@
 {
-  "Welcome to React": "Welcome to React and react-i18next"
+  "header": {
+    "title": "Max Membership",
+    "subtitle": "Exclusive privileges for power users",
+    "activePlan": "Active Plan",
+    "maxLevel": "Max Level",
+    "daysRemaining": "Days Remaining",
+    "days": "days",
+    "activeFeatures": "Active Features",
+    "features": "features",
+    "expires": "Expires",
+    "noMembership": "No active Max Membership. Choose a level below to get started."
+  },
+  "taps": {
+    "active": "ACTIVE",
+    "level": "Level"
+  },
+  "LevelHeader": {
+    "name_en": "Max Level",
+    "featuresIncluded": "Features Included",
+    "Female": "Female",
+    "Coins": "Coins",
+    "Male": "Male",
+    "USD": "USD",
+    "month": "Month",
+    "features": "Features"
+  },
+  "features": {
+    "badge": "Badge",
+    "room_background": "Room Background",
+    "room_lock": "Room Lock",
+    "stealth_visit": "Stealth Visit",
+    "chat_background": "Chat Background",
+    "hide_reg_days": "Hide Registration Days",
+    "send_photos_room": "Send Photos in Room",
+    "hide_charge_game_level": "Hide Charge Game Level",
+    "wealth_speed_3": "Wealth Speed 3",
+    "friend_cancel_alert": "Friend Cancel Alert",
+    "hide_top_supporters": "Hide Top Supporters",
+    "animated_avatar": "Animated Avatar",
+    "close_friends_toggle": "Close Friends Toggle",
+    "vip_discount_30": "VIP Discount 30%",
+    "wealth_speed_5": "Wealth Speed 5",
+    "exclusive_gifts": "Exclusive Gifts",
+    "room_list_color": "Room List Color",
+    "hide_agent_badges": "Hide Agent Badges"
+  },
+  "actionButtons": {
+    "currentlyActive": "Currently Active",
+    "upgrade": "Upgrade",
+    "activate": "Activate",
+    "activatedSuccess": "Membership activated successfully",
+    "somethingWentWrong": "Something went wrong"
+  },
+  "UpgradeModal": {
+    "title": "Upgrade Preview",
+    "levelChange": "Level {{from}} → Level {{to}}",
+    "remainingDays": "Remaining Days",
+    "halfDaysAdded": "Half Days Added",
+    "newSubscription": "New Subscription",
+    "totalDays": "Total Days",
+    "cost": "Cost",
+    "cancel": "Cancel",
+    "confirmUpgrade": "Confirm Upgrade",
+    "processing": "Processing..."
+  }
 }

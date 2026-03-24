@@ -1,3 +1,4 @@
+//i18n/i18n.js
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend"; // if we load translation files from backend
@@ -7,20 +8,21 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
   .use(HttpApi)
+  .on("languageChanged", (lng) => {
+    const dir = lng === "ar" ? "rtl" : "ltr";
+    document.documentElement.setAttribute("dir", dir);
+    document.documentElement.setAttribute("lang", lng);
+  })
   .init({
     // lng: "en", // if you're using a language detector, do not define the lng option
-    fallbackLng: "en", // Default Lng:  لو استعملت لغة مش موجوده
+    fallbackLng: "ar", // Default Lng:  لو استعملت لغة مش موجوده
     detection: {
       order: [
+        "querystring",
         "cookie",
-        "htmlTag",
-        "hash",
         "localStorage",
-        "sessionStorage",
-        "navigator",
-        "path",
-        "subdomain",
       ],
+      lookupQuerystring: "lang",
       caches: ["cookie"],
     },
 
@@ -37,5 +39,6 @@ i18n
       escapeValue: false,
     },
   });
+
 
 export default i18n;

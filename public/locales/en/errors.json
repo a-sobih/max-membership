@@ -1,7 +1,0 @@
-{
-  "required": "This field is required",
-  "invalidEmail": "Invalid email address",
-  "minLength": "Minimum length not met",
-  "serverError": "Something went wrong",
-  "unauthorized": "Unauthorized access"
-}

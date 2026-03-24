@@ -1,3 +1,67 @@
 {
-  "Welcome to React": "مرحبا بك في رياكت  ورياكت اي 18 نكست"
+  "header": {
+    "title": "العضوية القصوى",
+    "subtitle": "مزايا حصرية للمستخدمين المتقدمين",
+    "activePlan": "الخطة النشطة",
+    "maxLevel": "مستوى",
+    "daysRemaining": "الأيام المتبقية",
+    "days": "يوم",
+    "activeFeatures": "المميزات النشطة",
+    "features": "ميزة",
+    "expires": "تاريخ الانتهاء",
+    "noMembership": "لا توجد عضوية قصوى نشطة. اختر مستوى من الأسفل للبدء."
+  },
+  "taps": {
+    "active": "نشط",
+    "level": "المستوى"
+  },
+  "LevelHeader": {
+    "name_en": "المستوى الأقصى",
+    "featuresIncluded": "المميزات المشمولة",
+    "Female": "إناث",
+    "Coins": "عملات",
+    "Male": "ذكور",
+    "USD": "دولار أمريكي",
+    "month": "شهر",
+    "features": "المميزات"
+  },
+  "features": {
+    "badge": "شارة",
+    "room_background": "خلفية الغرفة",
+    "room_lock": "قفل الغرفة",
+    "stealth_visit": "زيارة خفية",
+    "chat_background": "خلفية الدردشة",
+    "hide_reg_days": "إخفاء أيام التسجيل",
+    "send_photos_room": "إرسال صور الغرفة",
+    "hide_charge_game_level": "إخفاء مستوى اللعبة",
+    "wealth_speed_3": "سرعة الثروة 3",
+    "friend_cancel_alert": "إشعار إلغاء الأصدقاء",
+    "hide_top_supporters": "إخفاء أفضل الداعمين",
+    "animated_avatar": "أفاتار متحرك",
+    "close_friends_toggle": "تبديل الأصدقاء المقربين",
+    "vip_discount_30": "خصم VIP 30%",
+    "wealth_speed_5": "سرعة الثروة 5",
+    "exclusive_gifts": "هدايا حصرية",
+    "room_list_color": "لون قائمة الغرف",
+    "hide_agent_badges": "إخفاء شارات الوكيل"
+  },
+  "actionButtons": {
+    "currentlyActive": "مفعل حالياً",
+    "upgrade": "ترقية",
+    "activate": "تفعيل",
+    "activatedSuccess": "تم تفعيل العضوية بنجاح",
+    "somethingWentWrong": "حدث خطأ ما"
+  },
+  "UpgradeModal": {
+    "title": "معاينة الترقية",
+    "levelChange": "المستوى {{from}} → المستوى {{to}}",
+    "remainingDays": "الأيام المتبقية",
+    "halfDaysAdded": "نصف الأيام المضافة",
+    "newSubscription": "الاشتراك الجديد",
+    "totalDays": "إجمالي الأيام",
+    "cost": "التكلفة",
+    "cancel": "إلغاء",
+    "confirmUpgrade": "تأكيد الترقية",
+    "processing": "جاري المعالجة..."
+  }
 }

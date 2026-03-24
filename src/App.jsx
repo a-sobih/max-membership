@@ -10,21 +10,28 @@ export default function App() {
 
   // change dir with language at the same time.
   useEffect(() => {
-    document.dir = i18n.language === "ar" ? "rtl" : "ltr";
-  }, [i18n.language]);
-
-  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+
     const token = params.get("token");
+    const lang = params.get("lang");
 
     if (token) {
       localStorage.setItem("token", token);
-
-      // حذف التوكن من الرابط بعد التخزين (اختياري)
-      window.history.replaceState({}, document.title, window.location.pathname);
     }
+
+    if (lang) {
+      i18n.changeLanguage(lang);
+      localStorage.setItem("lang", lang);
+    }
+    // حذف التوكن من الرابط بعد التخزين 
+    window.history.replaceState({}, document.title, window.location.pathname);
+
   }, []);
 
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+  }, [i18n.language]);
 
   return (
     <>
