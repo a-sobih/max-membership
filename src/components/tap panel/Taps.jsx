@@ -173,22 +173,25 @@ const Taps = ({ activeTab, setActiveTab }) => {
                         </div>
 
                         {/* Features list */}
-                        <div style={{ marginBottom: "22px" }}>
-                            <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "10px" }}>
+                        <div className="mb-5">
+                            <div className="text-[11px] text-[#888] uppercase tracking-[0.07em] mb-3">
                                 {t("LevelHeader.features")}
                             </div>
-                            {allFeatures?.map((feature) => {
-                                const isActive = activeFeatures.some(f => f.key === feature.key);
 
-                                return (
-                                    <FeatureRow
-                                        key={feature.key}
-                                        feature={feature}
-                                        isActive={isActive}
-                                        showLevel={true}
-                                    />
-                                );
-                            })}
+                            {/* ✅ Grid بدل List */}
+                            <div className="grid grid-cols-4 gap-4">
+                                {allFeatures?.map((feature) => {
+                                    const isActive = activeFeatures.some(f => f.key === feature.key);
+                                    return (
+                                        <FeatureRow
+                                            key={feature.key}
+                                            feature={feature}
+                                            isActive={isActive}
+                                            showLevel={true}
+                                        />
+                                    );
+                                })}
+                            </div>
                         </div>
 
                         {/* Action buttons */}
