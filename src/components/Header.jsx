@@ -51,7 +51,7 @@ const Header = () => {
 
                         animation: "pulse-glow 3s ease-in-out infinite",
                     }}>
-                        <div className="flex items-center justify-between gap-8">
+                        <div className="flex items-center justify-between flex-col md:flex-row md:gap-8 gap-2">
                             {/* الشمال */}
                             <div className="flex items-center gap-8">
                                 <div className="flex items-center gap-3">

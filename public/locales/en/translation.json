@@ -63,5 +63,105 @@
     "cancel": "Cancel",
     "confirmUpgrade": "Confirm Upgrade",
     "processing": "Processing..."
+  },
+  "featureDetails": {
+    "badge": {
+      "title": "VIP Badge",
+      "description": "Earn an exclusive badge that sets you apart from regular users, displayed next to your name across the entire platform. A symbol of your elite status.",
+      "highlight": "Show everyone you belong to the platform's elite"
+    },
+    "room_background": {
+      "title": "Room Background",
+      "description": "Personalize your room with unique, exclusive backgrounds unavailable to regular users. Make your room a true reflection of your personality.",
+      "highlight": "Exclusive backgrounds no one else can access"
+    },
+    "room_lock": {
+      "title": "Room Lock",
+      "description": "Control who enters your room by enabling the lock feature. No one can join without your personal approval or a password you set yourself.",
+      "highlight": "Full control over your room's privacy"
+    },
+    "stealth_visit": {
+      "title": "Stealth Visit",
+      "description": "Browse rooms and view profiles without anyone knowing you were there. Maintain complete privacy at all times.",
+      "highlight": "Browse without leaving a trace"
+    },
+    "chat_background": {
+      "title": "Chat Background",
+      "description": "Beautify your private conversations with distinctive backgrounds that reflect your refined taste. Make every chat a unique visual experience.",
+      "highlight": "More elegant and distinctive conversations"
+    },
+    "hide_reg_days": {
+      "title": "Hide Registration Days",
+      "description": "Hide your platform join date from other users. Keep your personal information completely private.",
+      "highlight": "Greater privacy for your personal data"
+    },
+    "send_photos_room": {
+      "title": "Send Room Photos",
+      "description": "Share photos directly inside public rooms and stay visually connected with all room members instantly.",
+      "highlight": "Direct visual communication inside rooms"
+    },
+    "hide_charge_game_level": {
+      "title": "Hide Game Level",
+      "description": "Hide your game charge level from other users. Keep your platform activity completely confidential.",
+      "highlight": "Play with complete privacy"
+    },
+    "wealth_speed_3": {
+      "title": "Wealth Speed ×3",
+      "description": "Accelerate your wealth accumulation three times faster than regular users. Progress quicker and climb the rankings with ease.",
+      "highlight": "Three times faster wealth building"
+    },
+    "friend_cancel_alert": {
+      "title": "Friend Cancel Alert",
+      "description": "Get instant notifications when someone removes you from their friend list. Never miss any changes in your friendships.",
+      "highlight": "Stay informed of every friendship change"
+    },
+    "hide_top_supporters": {
+      "title": "Hide Top Supporters",
+      "description": "Hide your top supporters list from other users' view. Keep your financial interactions on the platform completely private.",
+      "highlight": "Full privacy for your support activity"
+    },
+    "animated_avatar": {
+      "title": "Animated Avatar",
+      "description": "Stand out with an eye-catching animated avatar that draws attention everywhere you appear on the platform.",
+      "highlight": "Grab attention wherever you go"
+    },
+    "close_friends_toggle": {
+      "title": "Close Friends List",
+      "description": "Organize your friends into private circles and control who sees your updates and content. Smarter, more flexible privacy.",
+      "highlight": "Smart control over who sees your content"
+    },
+    "vip_discount_30": {
+      "title": "VIP Discount 30%",
+      "description": "Enjoy an exclusive 30% discount on all purchases within the platform. Save more the more you spend.",
+      "highlight": "Save 30% on every purchase"
+    },
+    "wealth_speed_5": {
+      "title": "Wealth Speed ×5",
+      "description": "The ultimate wealth-building feature — accumulate at five times the normal rate and dominate the wealth leaderboards.",
+      "highlight": "Five times faster wealth accumulation"
+    },
+    "exclusive_gifts": {
+      "title": "Exclusive Gifts",
+      "description": "Send and receive gifts only available to VIP members. Rare, high-value gifts that express your exceptional status.",
+      "highlight": "Rare gifts exclusive to VIP only"
+    },
+    "room_list_color": {
+      "title": "Room List Color",
+      "description": "Make your room stand out in the room list with a special color that catches the eye and increases visitor traffic.",
+      "highlight": "Your room is the first thing noticed"
+    },
+    "hide_agent_badges": {
+      "title": "Hide Agent Badges",
+      "description": "Hide agency badges and administrative rankings from your profile for a more neutral and private appearance.",
+      "highlight": "A more private and neutral identity"
+    }
+  },
+  "featureDialog": {
+    "level": "Required Level",
+    "status_active": "Active",
+    "status_inactive": "Inactive",
+    "dev_badge": "In Development",
+    "dev_note": "This feature is currently under development and will be available soon.",
+    "close": "Close"
   }
 }
