@@ -179,7 +179,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
                             </div>
 
                             {/* ✅ Grid بدل List */}
-                            <div className="grid md:grid-cols-4 grid-cols-3 gap-4">
+                            <div className="grid md:grid-cols-4 grid-cols-3 md:gap-4 gap-2">
                                 {allFeatures?.map((feature) => {
                                     const isActive = activeFeatures.some(f => f.key === feature.key);
                                     return (

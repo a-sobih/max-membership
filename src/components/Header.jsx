@@ -24,7 +24,7 @@ const Header = () => {
             position: "sticky", top: 0, zIndex: 40,
         }}>
             <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+                <div className="flex items-center gap-12  mb-5">
                     <span style={{ fontSize: "22px" }}>⭐</span>
                     <div>
                         <h1 style={{
@@ -53,7 +53,7 @@ const Header = () => {
                     }}>
                         <div className="flex items-center justify-between flex-col md:flex-row md:gap-8 gap-2">
                             {/* الشمال */}
-                            <div className="flex items-center gap-8">
+                            <div className="flex items-center sm:gap-8 gap-2">
                                 <div className="flex items-center gap-3">
                                     <span style={{ fontSize: "18px" }}>{LEVEL_COLORS[membership.level]?.badge}</span>
                                     <div>
