@@ -1,8 +1,7 @@
 import axios from "axios";
 import api from "./api";
 import { authStorage } from "./auth.storage";
-
-const API_URL = import.meta.env.VITE_API_URL;
+import { API_URL } from "./env";
 
 export async function refreshToken(originalRequest) {
   try {
