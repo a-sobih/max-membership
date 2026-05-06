@@ -33,7 +33,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
         },
     });
 
-    const { data: levels = [], isLoading: loadingLevels } = useQuery({
+    const { data: levels = [], isLoading: loadingLevels, isError: levelsError } = useQuery({
         queryKey: ["membership-levels"],
         queryFn: getMembershipLevels,
     });
@@ -44,7 +44,7 @@ const Taps = ({ activeTab, setActiveTab }) => {
         staleTime: 1000 * 60, // دقيقة واحدة cache
     });
 
-    const { data: levelsFeatures = {}, isLoading: loadingFeatures } = useQuery({
+    const { data: levelsFeatures = {}, isLoading: loadingFeatures, isError: featuresError } = useQuery({
         queryKey: ["membership-features"],
         queryFn: getMembershipFeatures,
     });
@@ -71,6 +71,13 @@ const Taps = ({ activeTab, setActiveTab }) => {
     );
 
     if (loadingLevels || loadingFeatures) return <Spinner />;
+    if (levelsError || featuresError) {
+        return (
+            <div className="text-center py-10 text-[#888]">
+                {t("errors.loadMembershipData", "Could not load membership data. Please refresh and try again.")}
+            </div>
+        );
+    }
 
     const getFeaturesUpToLevel = (lvlNumber) => {
         let features = [];

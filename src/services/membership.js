@@ -2,7 +2,6 @@
 import api from "./api";
 
 export const getCurrentMembership = async () => {
-    console.log("TOKEN:", localStorage.getItem("token"));
     const res = await api.get("/max-membership/current");
     return res.data.data;
 };
