@@ -14,7 +14,6 @@ const Taps = ({ activeTab, setActiveTab }) => {
     const { t } = useTranslation();
 
     const queryClient = useQueryClient();
-    const [showUpgrade, setShowUpgrade] = useState(false);
     const [upgradeLevel, setUpgradeLevel] = useState(null);
 
     const upgradeMutation = useMutation({

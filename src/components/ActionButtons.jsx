@@ -21,7 +21,7 @@ const MembershipActions = ({ lvl, membership, setShowUpgrade }) => {
 
             } else {
                 queryClient.invalidateQueries({ queryKey: ["currentMembership"] });
-                setUpgradeLevel(null);
+                setShowUpgrade(null);
                 // نجاح بدون دفع for female
                 toast.success(res.message || t("actionButtons.activatedSuccess"));
             }
